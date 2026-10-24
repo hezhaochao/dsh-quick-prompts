@@ -1,0 +1,57 @@
+{
+  "name": "dsh-quick-prompts",
+  "version": "0.1.0",
+  "description": "快捷提示词收藏夹：在 DSH 输入框旁放一个小按钮，点开即可一键把常用提示词填进输入框 / Quick prompt snippets widget for DeepSeek Harness",
+  "license": "MIT",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "prompt",
+    "snippets",
+    "productivity",
+    "ui"
+  ],
+  "author": {
+    "name": "hezhaochao"
+  },
+  "homepage": "https://github.com/hezhaochao/dsh-quick-prompts#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hezhaochao/dsh-quick-prompts.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hezhaochao/dsh-quick-prompts/issues"
+  },
+  "type": "module",
+  "main": "./lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "test",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node test/client.test.mjs"
+  },
+  "engines": {
+    "node": ">=20",
+    "dsh": ">=0.2.0-rc.1 <0.3.0-0"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true
+    }
+  }
+}
