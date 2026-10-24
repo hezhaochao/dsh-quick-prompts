@@ -2,10 +2,19 @@
 
 [![Test](https://github.com/hezhaochao/dsh-quick-prompts/actions/workflows/test.yml/badge.svg)](./actions/workflows/test.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
-[![DSH](https://img.shields.io/badge/DeepSeek%20Harness-%3E%3D0.2.0--rc.1-4d93f8)](https://github.com/deepseek-ai)
+[![DSH](https://img.shields.io/badge/DeepSeek%20Harness-0.2.x-4d93f8)](https://github.com/deepseek-ai/deepseek-harness)
 
-一个 [DeepSeek Harness（DSH）](https://github.com/deepseek-ai)插件：在输入框旁放一个「⚡ 快捷语」按钮，
+一个 [DeepSeek Harness（DSH）](https://github.com/deepseek-ai/deepseek-harness)插件：在输入框旁放一个「⚡ 快捷语」按钮，
 点开就能把你常用的提示词一键填进输入框。纯浏览器端实现，**零依赖、零网络请求、零 token 消耗**。
+
+## 版本兼容
+
+- 声明 `engines.dsh: ">=0.2.0-rc.1 <0.3.0-0"`，覆盖整个 0.2.x 系列
+- 已在 **v0.2.1-rc.3**（当前最新版，2026-10-23 发布）上完成安装 / 配置树组合 / 卸载验证
+- 插件只使用 `conversation.input.right` 插槽与 `__ModuleLoader__` 客户端模块系统，
+  未依赖任何 `@deepseek-ai/*` 宿主包；0.2.1 系列的破坏性变更（invariant 插件移除、
+  composer 统计拆分等）均不涉及这两个接口
+- 任何接口找不到时插件自动降级（复制到剪贴板），不会拖垮输入区；0.3.0 发布后会做回归验证再放开版本声明
 
 ## 功能
 
